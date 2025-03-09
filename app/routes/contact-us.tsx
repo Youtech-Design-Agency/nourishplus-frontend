@@ -1,7 +1,7 @@
 import { Controller, Form, useForm } from "react-hook-form"
 import { ContactUsFormInterface } from "~/components/landing-page/contact-us.types"
 import FooterComponent from "~/components/landing-page/footer"
-import MobileHeaderComponent from "~/components/landing-page/mobile-header"
+import HeaderComponent from "~/components/landing-page/header"
 import { Button } from "~/components/ui/button"
 import { Input } from "~/components/ui/input"
 import { Textarea } from "~/components/ui/textarea"
@@ -17,10 +17,11 @@ const ContactUs = () => {
     })
   return (
     <div>
-        <MobileHeaderComponent/>
-        <div className="p-5">
+        <HeaderComponent/>
+        <div className="p-5 flex flex-col lg:flex-row lg:justify-center lg:gap-20">
+            <section className="lg:mt-10 lg:w-[50%] lg:max-w-[500px]">
             <h1 className="text-3xl text-text-primary-dark">Got Questions?</h1>
-            <Form control={control} className="mt-10 flex flex-col gap-5">
+            <Form control={control} className="mt-10 flex flex-col gap-5 lg:border lg:rounded-lg lg:shadow-md lg:p-5">
                 <Controller
                 control={control}
                 rules={{required: true}}
@@ -69,8 +70,10 @@ const ContactUs = () => {
                     Submit Message
                 </Button>
             </Form>
+            </section>
 
-            <div className="flex flex-col gap-10 mt-10">
+            <section className="flex flex-col mt-10 lg:mt-28">
+            <div className="flex flex-col gap-10">
                 <div className="flex gap-5 items-center">
                     <img src="/telephone.svg" alt="Phone Icon" className="w-12 h-12"/>
                     <span>+234 707 510 3023</span>
@@ -88,6 +91,7 @@ const ContactUs = () => {
             <div className="flex items-center justify-center my-20">
                 <img src="/motto-logo.png" alt="Motto" className="w-60 h-auto"/>
             </div>
+            </section>
         </div>
         <FooterComponent/>
     </div>

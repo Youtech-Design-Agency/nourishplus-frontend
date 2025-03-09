@@ -46,14 +46,14 @@ export default function FooterComponent(){
         </Accordion>
       </div>
       </section>
-      <section className="flex flex-col lg:flex-row lg:justify-center lg:gap-20 border-t-8 border-t-green py-20">
-      <div className="w-full mb-10 lg:mb-0 lg:w-fit flex flex-col lg:flex-row lg:gap-20 gap-5">
+      <section className="flex text-sm flex-col lg:px-16 lg:flex-row lg:justify-center lg:gap-20 border-t-8 border-t-green py-20">
+      <div className="w-full mb-10 lg:mb-0 lg:w-fit flex flex-col lg:flex-row lg:gap-10 gap-5">
           <div className="flex flex-col mb-5 lg:mb-0 gap-5">
             <img src="/nourish-plus.png" alt="Logo" width="100%" height="100%" className="w-40 h-auto mx-auto lg:mx-0"/>
-            <p className="text-text-secondary-light w-[80%] lg:mt-auto lg:w-auto text-center lg:text-left mx-auto">Our goal is to make food as affordable as possible <br className="hidden lg:block"/> at good prices through a monthly subscription <br className="hidden lg:block"/> service. With every box delivered to a subscriber, a <br className="hidden lg:block"/> food item gets donated to a person in need.</p>
+            <p className="text-text-secondary-light text-sm w-[80%] lg:mt-auto lg:w-96 text-center lg:text-left mx-auto">Our goal is to make food as affordable as possible at good prices through a monthly subscription service. With every box delivered to a subscriber, a food item gets donated to a person in need.</p>
           </div>
 
-          <div className="flex lg:flex-col lg:mt-auto justify-center gap-5 text-white">
+          <div className="flex text-sm lg:flex-col lg:mt-auto justify-center gap-5 text-white">
             <Link to={'/about-us'}>About Us</Link>
             <Link to={'/contact-us'}>Contact Us</Link>
           </div>
