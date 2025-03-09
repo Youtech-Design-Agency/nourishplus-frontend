@@ -1,138 +1,117 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useNavigate } from "@remix-run/react";
+import FooterComponent from "~/components/landing-page/footer";
+import SubscriptionPackageComponent from "~/components/landing-page/package";
+import { subscriptionPackages } from "~/components/landing-page/packages";
+import { Button } from "~/components/ui/button";
+
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Nourish Plus" },
+    { name: "description", content: "Grocery shopping and delivery app offering convenient one-time orders or subscription-based services. Enjoy hassle-free shopping with fresh groceries delivered to your doorstep on your schedule." },
   ];
 };
 
 export default function Index() {
+  const navigate = useNavigate();
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
-          </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+   <main>
+    <section className="h-fit pb-40 lg:pb-48 bg-green-primary">
+      <div className="w-full h-12 bg-[url('/home-header.svg')]"> </div>
+      <div className="px-10 pt-16 lg:w-[60%] lg:max-w-[700px] lg:mx-auto">
+      <div className="flex flex-col items-center gap-[6px] lg:w-[75%] lg:mx-auto">
+        <Button className="bg-yellow rotate-[0.099rad] font-bold h-[3.5rem] w-full text-xl border-yellow-primary border-[0.5px]">Your trusted grocery &</Button>
+        <Button className="bg-green-tertiary rotate-[-0.07rad] ml-5 h-[3.5rem] w-[80%] text-xl font-bold text-green border-green-light border-[0.5px]">Food marketplace</Button>
       </div>
-    </div>
+      <p className="text-center text-text-secondary-light mt-10 font-normal text-lg">
+        Now you can shop smart, skip the lines and enjoy the cheapest <br className="hidden lg:block"/> food prices. Grocedy makes Grocery Shopping Easy, Fun, <br className="hidden lg:block"/> Affordable, and Rewarding for everyone.
+      </p>
+      <div className="flex flex-col lg:flex-row lg:justify-center gap-5 mt-10 w-[85%] mx-auto ">
+        <Button onClick={()=>navigate('/login')} className="primary-outline-button w-full lg:w-fit lg:px-10">Login</Button>
+        <Button onClick={()=>navigate('/register')} className="primary-button w-full lg:w-fit">Register Account</Button>
+      </div>
+      </div>
+    </section>
+      <section className="flex flex-col my-20">
+      <h1 className="text-center text-[30px] mb-10 text-text-primary-dark font-semibold">How it works</h1>
+      <div className="flex flex-col md:w-[70%] lg:flex-row gap-10 lg:px-20 lg:w-max md:mx-auto lg:gap-20">
+        <section className="pr-10 lg:pr-0 px-3">
+          <div className="flex flex-col mt-5 lg:mt-0 lg:h-full">
+            <div className="flex flex-1 h-max gap-5 items-stretch">
+              <div className="flex flex-col gap-2 justify-center">
+                <span className="w-10 h-10 shrink-0 rounded-full inline-flex items-center justify-center text-center bg-green text-white">1</span>
+                <hr className="w-px bg-text-primary-light mx-auto flex-grow"/>
+              </div>
+              <div className="flex flex-col gap-3 pb-10">
+                  <h3 className="text-lg text-green font-semibold">Sign Up & Get Verified</h3>
+                  <p className="text-text-primary-dark">Complete our easy sign-up process, and <br className="hidden lg:block"/> we&apos;ll guide you through verification.</p>
+              </div>
+            </div>
+            <div className="flex flex-1 gap-5 items-stretch">
+              <div className="flex flex-col justify-center">
+                <span className="w-10 h-10 shrink-0 rounded-full inline-flex items-center justify-center text-center bg-text-primary-dark text-white">2</span>
+                <hr className="w-px bg-text-primary-light mx-auto flex-grow"/>
+              </div>
+              <div className="flex flex-col gap-3 pb-10">
+                  <h3 className="text-text-primary-dark text-lg">Select Your Basket</h3>
+                  <p className="text-text-primary-dark">You can pick from our pre-curated baskets or <br className="hidden lg:block"/> create your own basket with food items you love.</p>
+              </div>
+            </div>
+            <div className="flex flex-1 gap-5 items-start">
+              <span className="w-10 h-10 shrink-0 rounded-full inline-flex items-center justify-center text-center bg-text-primary-dark text-white">3</span>
+              <div className="flex flex-col gap-3">
+                  <h3 className="text-text-primary-dark text-lg">Get Your Monthly Food Basket</h3>
+                  <p className="text-text-primary-dark">Sit back and we&apos;ll have your food basket <br className="hidden lg:block"/> delivered to your doorstep each month.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="px-5 py-16 lg:py-0">
+          <img src="/iphone.png" alt="Iphone" width="100%" height="100%" className="w-full h-auto"/>
+        </section>
+      </div>
+      </section>
+    <section className="bg-green-primary w-full py-16 flex flex-col lg:flex-row lg:justify-center lg:gap-20 gap-5 items-center">
+      <div className="flex flex-col gap-5">
+      <h1 className="font-semibold text-white text-[30px] text-center lg:text-left">Too Busy to shop? <br/> Leave it to us!</h1>
+      <p className="text-text-secondary-light text-center lg:text-left">We&apos;ll take care of the food item <br className="lg:hidden"/> while you relax or <br className="hidden lg:block"/> focus on more <br className="lg:hidden"/> things that matter.</p>
+      <Button className="primary-outline-button rounded-lg mx-auto lg:mx-0 w-fit !font-normal">Open an account</Button>
+      </div>
+      <div className="w-[80%] md:w-[60%] lg:w-auto mt-10 relative">
+        <img src="/thinking-person.png" alt="Person" width="100%" height="100%" className="w-full rounded-lg h-auto"/>
+        <img src="/yellow-star.png" alt="Star" width="100%" height="100%" className="absolute top-5 right-5 w-auto h-auto"/>
+      </div>
+    </section>
+    <section className="py-16">
+      <h1 className="text-[30px] text-text-primary-dark text-center font-semibold">Our Package Plan</h1>
+      <div className="px-2 flex flex-col items-center lg:flex-row lg:justify-center gap-5 mt-5">
+        {
+          subscriptionPackages.map((subscriptionPackage, index) => {
+            return (
+              <div className="w-full  md:max-w-[400px]" key={index}>
+                <SubscriptionPackageComponent variant={subscriptionPackage.variant} subscriptionPackage={subscriptionPackage.subscriptionPackage}/>
+              </div>
+            )
+          })
+        }
+      </div>
+    </section>
+    <section className="w-full bg-[#F9FAFB] py-16">
+      <div className="w-[80%] mx-auto flex flex-col lg:flex-row lg:justify-center lg:gap-20 lg:items-center gap-10">
+        <img src="/ingredients-basket.png" alt="Ingredients" width="100%" height="100%" className="w-full lg:w-auto h-auto rounded-lg"/>
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5">
+            <h1 className="text-[30px] font-semibold text-center lg:text-left text-text-primary-dark">Want something more <br/> to custom?</h1>
+            <p className="text-text-primary-dark/70 text-center lg:text-left">You can easily create your own custom <br className="lg:hidden"/> basket to suit <br className="hidden lg:block"/> your need and we will <br className="lg:hidden"/> deliver it to your door step</p>
+          </div>
+          <Button className="tertiary-outline-button rounded-lg w-[80%] lg:w-fit lg:px-10 py-7 mx-auto lg:mx-0">Create your basket</Button>
+        </div>
+      </div>
+    </section>
+    
+    <FooterComponent/>
+   </main>
   );
 }
 
-const resources = [
-  {
-    href: "https://remix.run/start/quickstart",
-    text: "Quick Start (5 min)",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M8.51851 12.0741L7.92592 18L15.6296 9.7037L11.4815 7.33333L12.0741 2L4.37036 10.2963L8.51851 12.0741Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://remix.run/start/tutorial",
-    text: "Tutorial (30 min)",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M4.561 12.749L3.15503 14.1549M3.00811 8.99944H1.01978M3.15503 3.84489L4.561 5.2508M8.3107 1.70923L8.3107 3.69749M13.4655 3.84489L12.0595 5.2508M18.1868 17.0974L16.635 18.6491C16.4636 18.8205 16.1858 18.8205 16.0144 18.6491L13.568 16.2028C13.383 16.0178 13.0784 16.0347 12.915 16.239L11.2697 18.2956C11.047 18.5739 10.6029 18.4847 10.505 18.142L7.85215 8.85711C7.75756 8.52603 8.06365 8.21994 8.39472 8.31453L17.6796 10.9673C18.0223 11.0653 18.1115 11.5094 17.8332 11.7321L15.7766 13.3773C15.5723 13.5408 15.5554 13.8454 15.7404 14.0304L18.1868 16.4767C18.3582 16.6481 18.3582 16.926 18.1868 17.0974Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://remix.run/docs",
-    text: "Remix Docs",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 24 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-  },
-];
