@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu"
 import NotificationsComponent from "./notifications"
-import { NavLink } from "@remix-run/react"
+import { Link, NavLink } from "@remix-run/react"
 
 const AppHeader = () => {
   return (
@@ -26,9 +26,11 @@ const AppHeader = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem className="flex items-center gap-2 p-3">
+                <DropdownMenuItem className="p-3">
+                  <Link to='/settings' className="flex items-center gap-2">
                   <img src='/settings.svg' alt="Settings" className="w-5 h-5"/>
                   Settings
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="flex text-[#D42620] items-center gap-2 p-3">
                 <img src='/sign-out.svg' alt="Settings" className="w-5 h-5"/>
