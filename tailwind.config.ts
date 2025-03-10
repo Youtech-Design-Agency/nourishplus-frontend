@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const { addDynamicIconSelectors } = require("@iconify/tailwind");
+import scrollbarHide from 'tailwind-scrollbar-hide'
 
 export default {
     darkMode: ["class"],
@@ -119,6 +120,6 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate"),    addDynamicIconSelectors(),
+  plugins: [require("tailwindcss-animate"),    addDynamicIconSelectors(), scrollbarHide
   ],
 } satisfies Config;

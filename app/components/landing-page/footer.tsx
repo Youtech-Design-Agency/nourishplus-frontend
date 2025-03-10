@@ -9,10 +9,12 @@ import { Button } from "../ui/button";
 import { faqs } from "./footer.types";
 import { Input } from "../ui/input";
 
-export default function FooterComponent(){
+export default function FooterComponent({showFaq = true}: {showFaq?: boolean}){
   return (
-    <div className="bg-[#111111] pt-16 flex flex-col">
-      <section className="flex flex-col lg:flex-row lg:gap-20 lg:py-10 lg:justify-center">
+    <div className={"bg-[#111111] flex flex-col" + (showFaq && 'pt-16')}>
+      {
+        showFaq &&
+        <section className="flex flex-col lg:flex-row lg:gap-20 lg:py-10 lg:justify-center">
       <div className="flex flex-col">
         <h1 className="text-text-tertiary-light text-center lg:text-left font-semibold text-[30px] mb-3">
           Got Questions? <br className="lg:hidden"/> We&apos;ve <br className="hidden lg:block"/> Got Answers!
@@ -46,7 +48,8 @@ export default function FooterComponent(){
         </Accordion>
       </div>
       </section>
-      <section className="flex text-sm flex-col lg:px-16 lg:flex-row lg:justify-center lg:gap-20 border-t-8 border-t-green py-20">
+      }
+      <section className={"flex text-sm w-full flex-col lg:px-16 lg:flex-row lg:justify-center lg:gap-20 border-t-8 border-t-green py-20"}>
       <div className="w-full mb-10 lg:mb-0 lg:w-fit flex flex-col lg:flex-row lg:gap-10 gap-5">
           <div className="flex flex-col mb-5 lg:mb-0 gap-5">
             <img src="/nourish-plus.png" alt="Logo" width="100%" height="100%" className="w-40 h-auto mx-auto lg:mx-0"/>
