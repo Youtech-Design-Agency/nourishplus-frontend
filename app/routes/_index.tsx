@@ -20,8 +20,17 @@ export default function Index() {
    <main>
     <section className="h-fit pb-40 lg:pb-48 bg-green-primary">
       <div className="w-full h-12 bg-[url('/home-header.svg')]"> </div>
-      <div className="px-10 pt-16 lg:w-[60%] lg:max-w-[700px] lg:mx-auto">
-      <div className="flex flex-col items-center gap-[6px] lg:w-[75%] lg:mx-auto">
+      <div className="px-10 pt-16 lg:w-[60%] lg:max-w-[700px] lg:mx-auto relative">
+        <div className="w-60 h-48 mt-[-4rem] mx-auto px-[2.5px] bg-gradient-to-b from-transparent to-[#33AD5C]">
+          <div className="bg-green-primary w-full h-full">
+          <div className="w-40 h-40 mt-[-4rem] mx-auto px-[2.5px] bg-gradient-to-b from-transparent to-[#33AD5C]">
+            <div className="bg-green-primary w-full h-full">
+
+            </div>
+          </div>
+          </div>
+        </div>
+      <div className="flex flex-col items-center gap-[6px] mt-[-40px] lg:w-[75%] lg:mx-auto">
         <Button className="bg-yellow rotate-[0.099rad] font-bold h-[3.5rem] w-full text-xl border-yellow-primary border-[0.5px]">Your trusted grocery &</Button>
         <Button className="bg-green-tertiary rotate-[-0.07rad] ml-5 h-[3.5rem] w-[80%] text-xl font-bold text-green border-green-light border-[0.5px]">Food marketplace</Button>
       </div>
@@ -114,7 +123,7 @@ export default function Index() {
         }
       </div>
     </section>
-    <section className="w-full bg-[#F9FAFB] py-16">
+    <section className="w-full bg-[#F9FAFB] py-16 relative overflow-hidden">
       <div className="w-[80%] mx-auto flex flex-col lg:flex-row lg:justify-center lg:gap-20 lg:items-center gap-10">
         <img src="/ingredients-basket.png" alt="Ingredients" width="100%" height="100%" className="w-full lg:w-auto h-auto rounded-lg"/>
         <div className="flex flex-col gap-5">
@@ -125,6 +134,7 @@ export default function Index() {
           <Button className="tertiary-outline-button rounded-lg w-[80%] lg:w-fit lg:px-10 py-7 mx-auto lg:mx-0">Create your basket</Button>
         </div>
       </div>
+      <img src="/curve-vector.png" alt="Background Pattern" className="absolute right-0 top-[60%] opacity-[25%]"/>
     </section>
     
     <FooterComponent/>
