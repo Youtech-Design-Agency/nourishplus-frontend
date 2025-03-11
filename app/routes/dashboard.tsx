@@ -14,9 +14,9 @@ const HomePage = () => {
     <div className="h-screen w-screen bg-[#F6F3F3] flex flex-col">
       <AppHeader/>
       <div className="flex-1 flex flex-col overflow-y-auto pt-5">
-        <section className="flex w-full lg:w-[70%] lg:max-w-[700px] lg:mx-auto lg:!h-16 px-5">
-          <Input placeholder="Search for product" className="flex-1 h-full lg:px-5 focus:outline-none rounded-l-full rounded-r-none text-sm"/>
-          <Button className="bg-green w-max shrink-0 font-normal h-full text-white rounded-l-none flex items-center gap-2 rounded-r-full">
+        <section className="flex w-full lg:w-[70%] lg:max-w-[700px] lg:mx-auto px-5">
+          <Input placeholder="Search for product" className="flex-1 h-12 lg:px-5 focus:outline-none rounded-l-full rounded-r-none text-sm"/>
+          <Button className="bg-green w-max shrink-0 font-normal h-12 text-white rounded-l-none flex items-center gap-2 rounded-r-full">
             <i className="icon-[fluent--search-20-regular] text-xl"></i>
             <span>Search</span>
           </Button>
@@ -56,7 +56,7 @@ const HomePage = () => {
             <Button className="text-text-primary-dark font-normal rounded-none p-3 bg-transparent lg:border lg:border-[#E4E7EC] lg:rounded-lg lg:px-4 lg:!py-0 lg:h-8">Pasta</Button>
           </div>
         </section>
-        <section className="mt-5 flex px-5 lg:mt-10 lg:pb-10 flex-col lg:grid lg:grid-cols-3 lg:gap-10 lg:px-20 gap-3">
+        <section className="mt-5 flex px-5 lg:mt-10 lg:pb-10 flex-col lg:grid lg:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] lg:gap-10 lg:px-20 gap-3">
           <GroceryCard/>
           <GroceryCard/>
           <GroceryCard/>
@@ -73,6 +73,7 @@ const HomePage = () => {
           </div>
           
           <CartComponent/>
+          
 
         </section>
         <div className="mt-10">

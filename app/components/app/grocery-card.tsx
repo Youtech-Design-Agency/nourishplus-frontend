@@ -9,8 +9,8 @@ const GroceryCard = () => {
             <small className="text-green">Nourish+ price N12,000.00</small>
             <small className="text-red">Market price N15,000.00</small>
         </div>
-        <Button className="absolute bottom-3 !p-0 w-7 h-7 flex items-center justify-center bg-[#228B22] right-5 rounded-full">
-            <i className="icon-[dashicons--plus] w-5 h-5 my-auto text-center text-white"></i>
+        <Button className="absolute bottom-3 !p-0 right-3">
+          <i className="icon-[flat-color-icons--plus] w-7 h-7 text-[#228B22] absolute top-3 right-3"></i>
         </Button>
     </div>
   )

@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useNavigate } from "@remix-run/react";
 import FooterComponent from "~/components/landing-page/footer";
+import GroceryDisplayCard from "~/components/landing-page/grocery-display-card";
 import SubscriptionPackageComponent from "~/components/landing-page/package";
 import { subscriptionPackages } from "~/components/landing-page/packages";
 import { Button } from "~/components/ui/button";
@@ -33,7 +34,23 @@ export default function Index() {
       </div>
       </div>
     </section>
-      <section className="flex flex-col my-20">
+    <section className="flex gap-5 py-2 mt-[-125px] overflow-x-hidden h-fit justify-center w-full">
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+      <GroceryDisplayCard/>
+    </section>
+    <section className="flex flex-col my-20">
       <h1 className="text-center text-[30px] mb-10 text-text-primary-dark font-semibold">How it works</h1>
       <div className="flex flex-col md:w-[70%] lg:flex-row gap-10 lg:px-20 lg:w-max md:mx-auto lg:gap-20">
         <section className="pr-10 lg:pr-0 px-3">
