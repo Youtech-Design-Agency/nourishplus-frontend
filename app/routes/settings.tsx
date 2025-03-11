@@ -1,8 +1,11 @@
 import AppFooter from "~/components/app/app-footer"
 import AppHeader from "~/components/app/app-header"
+import ChangePasswordModal from "~/components/app/change-password"
+import DeactivateAccountModal from "~/components/app/deactivate-account"
 import MobileNavigation from "~/components/app/mobile-nav"
 import FooterComponent from "~/components/landing-page/footer"
 import { Button } from "~/components/ui/button"
+import { Dialog, DialogTrigger } from "~/components/ui/dialog"
 
 const SettingsPage = () => {
   return (
@@ -58,26 +61,37 @@ const SettingsPage = () => {
             <div className="w-full rounded-lg pt-5 bg-white">
               <h1 className="ml-5 mb-5">Settings</h1>
               <div className="flex flex-col mt-5 border-t divide-y">
-                  <div className="flex justify-between pr-5 items-center">
-                    <div className="flex gap-5 items-center p-5 text-text-primary-dark">
-                      <i className="icon-[mingcute--question-line] w-7 h-7"></i>
-                      <span>Change Password</span>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div role="button" className="flex cursor-pointer justify-between pr-5 items-center">
+                        <div className="flex gap-5 items-center p-5 text-text-primary-dark">
+                          <i className="icon-[mingcute--question-line] w-7 h-7"></i>
+                          <span>Change Password</span>
+                        </div>
+                        <Button className="bg-transparent p-0">
+                          <i className="icon-[meteor-icons--chevron-right] text-text-primary-dark w-5 h-5"></i>
+                        </Button>
+                      </div>
+                    </DialogTrigger>
+                    <ChangePasswordModal/>
+                  </Dialog>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                    <div role="button" className="flex cursor-pointer justify-between pr-5 items-center">
+                    <div className="flex gap-5 items-center p-5 text-red">
+                      <i className="icon-[gg--trash] w-7 h-7"></i>
+                      <span>Delete Account</span>
                     </div>
                     <Button className="bg-transparent p-0">
                       <i className="icon-[meteor-icons--chevron-right] text-text-primary-dark w-5 h-5"></i>
                     </Button>
                   </div>
-                  <div className="flex justify-between pr-5 items-center">
-                  <div className="flex gap-5 items-center p-5 text-red">
-                    <i className="icon-[gg--trash] w-7 h-7"></i>
-                    <span>Delete Account</span>
-                  </div>
-                    <Button className="bg-transparent p-0">
-                      <i className="icon-[meteor-icons--chevron-right] text-text-primary-dark w-5 h-5"></i>
-                    </Button>
-                  </div>
+                    </DialogTrigger>
+                    <DeactivateAccountModal/>
+                  </Dialog>
                   
-                  <div className="flex gap-5 items-center p-5 text-red">
+                  
+                  <div role="button" className="flex cursor-pointer gap-5 items-center p-5 text-red">
                   <i className="icon-[mynaui--logout] w-7 h-7"></i>
                   <span>Logout</span>
                   </div>
