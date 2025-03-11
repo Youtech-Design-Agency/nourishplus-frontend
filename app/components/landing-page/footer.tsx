@@ -56,7 +56,7 @@ export default function FooterComponent({showFaq = true}: {showFaq?: boolean}){
             <p className="text-text-secondary-light text-sm w-[80%] lg:mt-auto lg:w-96 text-center lg:text-left mx-auto">Our goal is to make food as affordable as possible at good prices through a monthly subscription service. With every box delivered to a subscriber, a food item gets donated to a person in need.</p>
           </div>
 
-          <div className="flex text-sm lg:flex-col lg:mt-auto justify-center gap-5 text-white">
+          <div className="flex text-sm lg:flex-col lg:mt-auto justify-center gap-5 text-white shrink-0">
             <Link to={'/about-us'}>About Us</Link>
             <Link to={'/contact-us'}>Contact Us</Link>
           </div>
@@ -70,8 +70,8 @@ export default function FooterComponent({showFaq = true}: {showFaq?: boolean}){
           </div>
 
           <section className="border-t lg:flex-row lg:items-center lg:justify-between lg:gap-10 flex flex-col gap-5 border-t-[#343E39] mt-6 pt-10 lg:pt-6">
-            <p className="text-text-secondary-light text-sm text-center">Copyright © Nourish+ by Greenhabor Technonlogies — 2025</p>
-            <div className="flex justify-center gap-3 lg:text-sm text-white">
+            <p className="text-text-secondary-light text-xs text-center">Copyright © Nourish+ by Greenhabor Technonlogies — 2025</p>
+            <div className="flex justify-center gap-3 text-xs text-white shrink-0">
               <Link to={'#'}>Terms of Service</Link>
               <Link to={'#'}>Privacy Policy</Link>
             </div>
