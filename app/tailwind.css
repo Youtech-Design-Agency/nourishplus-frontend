@@ -95,3 +95,7 @@ body {
 .tertiary-outline-button{
   @apply border border-green text-green text-center bg-white text-lg
 }
+
+.dashboard-carousel>div{
+  @apply rounded-lg
+}

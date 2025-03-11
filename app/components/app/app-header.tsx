@@ -13,7 +13,7 @@ const AppHeader = () => {
     <div className="flex justify-between shrink-0 h-20 p-5 lg:px-10 bg-white border-b sticky top-0 left-0 right-0 z-10 border-[#4444441A]">
         <img src="/main-app-logo.png" alt="Home Page Logo" className="h-full w-auto"/>
         <div className="flex items-center space-x-3">
-            <div className="flex gap-5 mr-20 items-center">
+            <div className="hidden lg:flex gap-5 mr-20 items-center">
               <NavLink className={({isActive})=> `${isActive ? 'text-green' : 'text-text-primary-dark'}`} to='/dashboard'>Dashboard</NavLink>
               <NavLink className={({isActive})=> `${isActive ? 'text-green' : 'text-text-primary-dark'}`} to='/my-plans'>My Plans</NavLink>
             </div>
