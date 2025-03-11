@@ -14,7 +14,7 @@ const HomePage = () => {
     <div className="h-screen w-screen bg-[#F6F3F3] flex flex-col">
       <AppHeader/>
       <div className="flex-1 flex flex-col overflow-y-auto pt-5">
-        <section className="flex w-full lg:w-[70%] lg:max-w-[700px] lg:mx-auto lg:!h-12 px-5">
+        <section className="flex w-full lg:w-[70%] lg:max-w-[700px] lg:mx-auto lg:!h-16 px-5">
           <Input placeholder="Search for product" className="flex-1 h-full lg:px-5 focus:outline-none rounded-l-full rounded-r-none text-sm"/>
           <Button className="bg-green w-max shrink-0 font-normal h-full text-white rounded-l-none flex items-center gap-2 rounded-r-full">
             <i className="icon-[fluent--search-20-regular] text-xl"></i>
