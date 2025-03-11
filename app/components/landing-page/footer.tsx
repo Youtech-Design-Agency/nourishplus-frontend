@@ -11,7 +11,7 @@ import { Input } from "../ui/input";
 
 export default function FooterComponent({showFaq = true}: {showFaq?: boolean}){
   return (
-    <div className={"bg-[#111111] flex flex-col" + (showFaq && 'pt-16')}>
+    <div className={"bg-[#111111] flex flex-col " + (showFaq && 'pt-16')}>
       {
         showFaq &&
         <section className="flex flex-col lg:flex-row lg:gap-20 lg:py-10 lg:justify-center">
@@ -47,7 +47,7 @@ export default function FooterComponent({showFaq = true}: {showFaq?: boolean}){
           })}
         </Accordion>
       </div>
-      </section>
+        </section>
       }
       <section className={"flex text-sm w-full flex-col lg:px-16 lg:flex-row lg:justify-center lg:gap-20 border-t-8 border-t-green py-20"}>
       <div className="w-full mb-10 lg:mb-0 lg:w-fit flex flex-col lg:flex-row lg:gap-10 gap-5">
