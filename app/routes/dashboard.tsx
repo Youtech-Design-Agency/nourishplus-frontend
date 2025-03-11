@@ -91,7 +91,7 @@ const HomePage = () => {
                 <button
                   key={index}
                   className={cn(
-                    "h-2 rounded-full transition-colors",
+                    "h-2 rounded-full transition-all duration-300",
                     current === index ? "bg-green w-4" : "bg-gray-300 w-2 hover:bg-gray-400"
                   )}
                   onClick={() => goToSlide(index)}
